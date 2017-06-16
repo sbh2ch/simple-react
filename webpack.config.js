@@ -1,9 +1,10 @@
 /**
  * Created by kiost on 2017-06-16.
  */
-import webpack from 'webpack';
 
-module.exports = {
+var webpack = require('webpack');
+
+module.exports = { //이 객체를 모듈로 내보내겠다는 뜻. -> 다른코드에서 이 객체를 import 가능해짐
     entry: './src/index.js',
 
     output: {
@@ -33,10 +34,10 @@ module.exports = {
     },
 
     resolveLoader: {
-        moduleExtensions: ['-resolver']
+        moduleExtensions: ['-loader']
     },
 
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]
-};
+}
